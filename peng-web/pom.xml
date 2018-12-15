@@ -21,9 +21,9 @@
 			<version>1.4</version>
 		</dependency>
 		<dependency>
-			<groupId>com.lxinet</groupId>
-			<artifactId>jeesns-service</artifactId>
-			<version>1.4.1</version>
+			<groupId>com.peng</groupId>
+			<artifactId>peng-service</artifactId>
+			<version>1.0.0</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -150,6 +150,11 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.peng</groupId>
+			<artifactId>peng-service</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 

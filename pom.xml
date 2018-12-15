@@ -13,6 +13,7 @@
     <modules>
         <module>peng-service</module>
         <module>peng-web</module>
+        <module>peng-core</module>
     </modules>
 
     <dependencyManagement>

@@ -28,7 +28,7 @@
 
 
     <!-- 扫描注解 -->
-    <context:component-scan base-package="com.lxinet.jeesns">
+    <context:component-scan base-package="com.peng.itrat">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
@@ -66,7 +66,7 @@
     <!-- spring的属性加载器，加载properties文件中的属性 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location">
-            <value>classpath:jeesns.properties</value>
+            <value>classpath:itrat.properties</value>
         </property>
         <property name="fileEncoding" value="utf-8"/>
     </bean>
@@ -120,7 +120,7 @@
     <mvc:resources location="/manage/" mapping="/manage/**"/>
     <mvc:interceptors>
         <!-- 配置全局拦截器 -->
-        <bean class="com.lxinet.jeesns.interceptor.InitInterceptor"/>
+        <bean class="com.peng.itrat.interceptor.InitInterceptor"/>
     </mvc:interceptors>
 
     <mvc:annotation-driven validator="validator"/>
@@ -143,13 +143,11 @@
         <!-- 这里配置将使用上面国际化配置的messageSource -->
         <property name="validationMessageSource" ref="messageSource"/>
     </bean>
-    <bean id="controllerAop" class="com.lxinet.jeesns.aop.ControllerAop"></bean>
+    <bean id="controllerAop" class="com.peng.itrat.aop.ControllerAop"></bean>
 
     <aop:aspectj-autoproxy />
     <aop:config>
         <aop:aspect id="controllerAop" ref="controllerAop">
-            <!--<aop:pointcut id="target" expression="execution(public com.lxinet.jeesns.core.dto.ResultModel *(..)) ||-->
-                    <!--execution(public * com.lxinet.jeesns.web..*.*(..))" />-->
             <aop:pointcut id="target" expression="execution(public com.lxinet.jeesns.core.dto.ResultModel *(..))" />
             <aop:around method="handlerController" pointcut-ref="target" />
         </aop:aspect>
