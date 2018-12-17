@@ -1,4 +1,4 @@
-# JEESNS
+# ITRAT
 
 开发语言：JAVA
 
@@ -9,26 +9,6 @@ JAVA开发框架：Spring MVC+Spring+Mybatis
 前台前端开发框架：ZUI+JQuery+Bootstrap
 
 前台模板引擎：Freemarker
-
-## 简介
-JEESNS是一款基于JAVA企业级平台研发的社交管理系统，依托企业级JAVA的高效、安全、稳定等优势，开创国内JAVA版开源SNS先河，JEESNS可以用来搭建门户、论坛、社区、微博、知识付费平台等。
-
-交流社区：[http://www.jeesns.cn](http://www.jeesns.cn/)
-
-官方网址：[http://www.lxinet.com](http://www.lxinet.com/)
-
-github：[https://github.com/zchuanzhao/jeesns](https://github.com/zchuanzhao/jeesns/)
-
-
-## 应用场景
-- JEESNS是一个企业级的开源社区系统，是一个可以用来搭建门户、群组、论坛和微博的社区系统。
-- JEESNS是将SNS社会化网络元素，人和群组结合在一起的新型的社交系统。
-- JEESNS以人为中心，通过用户的需求和行为将最有价值的信息得以不断整合。
-- JEESNS是一个稳定、安全、可扩展的社区系统，可以帮您搭建与众不同的交流社区。
-- 如果您要需要搭建一个论坛,那么您可以用JEESNS
-- 如果您需要一个群组，那么您可以用JEESNS
-- 如果您想做一个知识付费平台，那么您可以用JEESNS
-- 如果您需要因为某个话题来汇聚人群，那么您可以用JEESNS
 
 ## 功能模块
 - 私信功能
@@ -83,30 +63,11 @@ github：[https://github.com/zchuanzhao/jeesns](https://github.com/zchuanzhao/je
 2. 执行数据库脚本。数据库脚本在`/src/main/webapp/database`目录下。
 3. 在eclipse中导入maven项目。点击eclipse菜单`File` - `Import`，选择`Maven` - `Existing Maven Projects`。
 4. 设置项目编码为utf-8，选择jdk1.8版本或以上，不要选择jre。
-5. 修改数据库连接。打开`/src/main/resources/jeesns.propertis`文件，根据实际情况修改`jdbc.url`、`jdbc.user`、`jdbc.password`的值，修改后台路径：`managePath`，如：`managePath=manage`
-6. 将jeesns-core-1.4.jar放到硬盘中，如：D:\jeesns-core-1.4.jar
-   
-   在命令行中输入以下命令
-   
-   `mvn install:install-file -Dfile=D:\jeesns-core-1.4.jar -DgroupId=com.lxinet -DartifactId=jeesns-core -Dversion=1.4 -Dpackaging=jar`
+5. 修改数据库连接。打开`/src/main/resources/itrat.propertis`文件，根据实际情况修改`jdbc.url`、`jdbc.user`、`jdbc.password`的值，修改后台路径：`managePath`，如：`managePath=manage`
+
    
    执行成功后，jeesns-core-1.4.jar会自动添加到本地maven仓库中。
 7. 编译项目。在eclipse中，右键点击项目名，选择`Run as` - `Maven build...`，`Goals`填入`clean package`，然后点击`Run`，第一次运行需要下载jar包，请耐心等待。
 8. 部署项目。将项目部署到Tomcat7或以上版本，启动Tomcat。
 9. 访问系统。前台地址：[http://localhost:8080/](http://localhost:8080/)；用户名：admin，密码：jeesns，登录成功之后，在右上角展开有个'管理'，点击即可进入后台管理。
 
-## 部署详细说明
-1. [JDK安装说明](https://my.oschina.net/zchuanzhao/blog/853387)
-2. [Maven安装说明](https://my.oschina.net/zchuanzhao/blog/853392)
-3. [JEESNS使用Maven打包介绍](https://my.oschina.net/zchuanzhao/blog/853393)
-4. [JEESNS导入数据库说明](https://my.oschina.net/zchuanzhao/blog/853394)
-5. [Eclipse导入JEESNS项目和部署说明](https://my.oschina.net/zchuanzhao/blog/853397)
-6. [IDEA导入JEESNS1.2.0项目和部署教程](https://my.oschina.net/zchuanzhao/blog/1486494)
-
-
-## 相关网站
-官方网站：[http://www.jeesns.cn](http://www.jeesns.cn/)
-
-技术支持：[http://www.lxinet.com](http://www.lxinet.com/)
-
-服务器支持：[http://www.919dns.com](http://www.919dns.com/)
