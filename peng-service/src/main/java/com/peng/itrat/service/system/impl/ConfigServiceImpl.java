@@ -1,8 +1,8 @@
 package com.peng.itrat.service.system.impl;
 
 import com.peng.itrat.service.system.IConfigService;
-import com.lxinet.jeesns.core.exception.ParamException;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.exception.ParamException;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.dao.system.IConfigDao;
 import com.peng.itrat.model.system.Config;
 import org.springframework.stereotype.Service;

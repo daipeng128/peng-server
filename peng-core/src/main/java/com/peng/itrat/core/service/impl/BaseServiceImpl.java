@@ -4,9 +4,9 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import com.peng.itrat.core.conditions.SqlWrapper;
+import com.peng.itrat.core.service.IBaseService;
 import com.peng.itrat.core.dao.BaseMapper;
 import com.peng.itrat.core.model.Page;
-import com.peng.itrat.core.service.IBaseService;
 import com.peng.itrat.core.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 

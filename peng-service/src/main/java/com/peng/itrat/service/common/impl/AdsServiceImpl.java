@@ -1,10 +1,10 @@
 package com.peng.itrat.service.common.impl;
 
 import com.peng.itrat.service.common.IAdsService;
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.exception.OpeErrorException;
-import com.lxinet.jeesns.core.model.Page;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.exception.OpeErrorException;
+import com.peng.itrat.core.model.Page;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.dao.common.IAdsDao;
 import com.peng.itrat.model.common.Ads;
 import org.springframework.stereotype.Service;

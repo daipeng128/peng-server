@@ -1,7 +1,7 @@
 package com.peng.itrat.dao.weibo;
 
 import com.peng.itrat.model.weibo.WeiboFavor;
-import com.lxinet.jeesns.core.dao.BaseMapper;
+import com.peng.itrat.core.dao.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
 /**

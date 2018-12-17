@@ -1,7 +1,7 @@
 package com.peng.itrat.directive;
 
-import com.lxinet.jeesns.core.directive.BaseDirective;
-import com.lxinet.jeesns.core.handler.DirectiveHandler;
+import com.peng.itrat.core.directive.BaseDirective;
+import com.peng.itrat.core.handler.DirectiveHandler;
 import com.peng.itrat.model.group.GroupType;
 import com.peng.itrat.service.group.IGroupTypeService;
 import freemarker.template.TemplateException;

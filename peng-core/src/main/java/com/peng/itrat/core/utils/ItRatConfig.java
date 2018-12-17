@@ -3,8 +3,8 @@ package com.peng.itrat.core.utils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component("jeesnsConfig")
-public class JeesnsConfig {
+@Component("itRatConfig")
+public class ItRatConfig {
     @Value("${managePath}")
     private String managePath;
     @Value("${groupPath}")
@@ -20,7 +20,7 @@ public class JeesnsConfig {
     @Value("${mobileTemplate}")
     private String mobileTemplate;
 
-    public JeesnsConfig() {
+    public ItRatConfig() {
     }
 
     public String getManagePath() {

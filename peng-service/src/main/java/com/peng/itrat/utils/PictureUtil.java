@@ -1,7 +1,7 @@
 package com.peng.itrat.utils;
 
 import com.peng.itrat.model.picture.Picture;
-import com.lxinet.jeesns.core.utils.StringUtils;
+import com.peng.itrat.core.utils.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;

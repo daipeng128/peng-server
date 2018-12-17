@@ -3,7 +3,7 @@ package com.peng.itrat.service.group.impl;
 import com.peng.itrat.dao.group.IGroupTopicTypeDao;
 import com.peng.itrat.model.group.GroupTopicType;
 import com.peng.itrat.service.group.IGroupTopicTypeService;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

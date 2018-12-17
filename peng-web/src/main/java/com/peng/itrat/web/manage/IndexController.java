@@ -2,11 +2,11 @@ package com.peng.itrat.web.manage;
 
 import com.peng.itrat.interceptor.AdminLoginInterceptor;
 import com.peng.itrat.utils.MemberUtil;
-import com.lxinet.jeesns.core.annotation.Before;
-import com.lxinet.jeesns.core.annotation.Clear;
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.utils.Const;
-import com.lxinet.jeesns.core.utils.JeesnsConfig;
+import com.peng.itrat.core.annotation.Before;
+import com.peng.itrat.core.annotation.Clear;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.utils.Const;
+import com.peng.itrat.core.utils.ItRatConfig;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.service.common.ICommonService;
 import com.peng.itrat.service.member.IMemberService;
@@ -29,7 +29,7 @@ public class IndexController extends BaseController {
     @Resource
     private IMemberService memberService;
     @Resource
-    private JeesnsConfig jeesnsConfig;
+    private ItRatConfig itRatConfig;
     @Resource
     private ICommonService commonService;
 
@@ -113,8 +113,8 @@ public class IndexController extends BaseController {
         Member loginMember = memberService.manageLogin(member,request);
         if(loginMember != null){
             MemberUtil.setLoginMember(request,loginMember);
-            if (com.lxinet.jeesns.core.utils.StringUtils.isEmpty(redirectUrl)){
-                redirectUrl = request.getContextPath() + "/" + jeesnsConfig.getManagePath() + "/";
+            if (com.peng.itrat.core.utils.StringUtils.isEmpty(redirectUrl)){
+                redirectUrl = request.getContextPath() + "/" + itRatConfig.getManagePath() + "/";
             }
             return new ResultModel(2,"登录成功",redirectUrl);
         }else {
@@ -124,10 +124,10 @@ public class IndexController extends BaseController {
 
     @RequestMapping(value="/error",method = RequestMethod.GET)
     public String error(String msg, Model model){
-        if (com.lxinet.jeesns.core.utils.StringUtils.isNotBlank(msg)){
+        if (com.peng.itrat.core.utils.StringUtils.isNotBlank(msg)){
             model.addAttribute("msg", msg);
         }
-        return jeesnsConfig.getManageTemplate() + "/common/error";
+        return itRatConfig.getManageTemplate() + "/common/error";
     }
 
 }

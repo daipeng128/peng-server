@@ -1,10 +1,10 @@
 package com.peng.itrat.web.manage;
 
 import com.peng.itrat.interceptor.AdminLoginInterceptor;
-import com.lxinet.jeesns.core.annotation.Before;
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.model.Page;
-import com.lxinet.jeesns.core.utils.DateFormatUtil;
+import com.peng.itrat.core.annotation.Before;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.model.Page;
+import com.peng.itrat.core.utils.DateFormatUtil;
 import com.peng.itrat.model.common.Ads;
 import com.peng.itrat.service.common.IAdsService;
 import com.peng.itrat.web.common.BaseController;

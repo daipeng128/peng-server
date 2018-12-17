@@ -1,11 +1,11 @@
 package com.peng.itrat.model.picture;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.lxinet.jeesns.core.annotation.Column;
-import com.lxinet.jeesns.core.annotation.Id;
-import com.lxinet.jeesns.core.annotation.Table;
-import com.lxinet.jeesns.core.enums.FillTime;
-import com.lxinet.jeesns.core.enums.IdType;
+import com.peng.itrat.core.annotation.Column;
+import com.peng.itrat.core.annotation.Id;
+import com.peng.itrat.core.annotation.Table;
+import com.peng.itrat.core.enums.FillTime;
+import com.peng.itrat.core.enums.IdType;
 
 import java.util.Date;
 

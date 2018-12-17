@@ -1,6 +1,6 @@
 package com.peng.itrat.dao.system;
 
-import com.lxinet.jeesns.core.dao.BaseMapper;
+import com.peng.itrat.core.dao.BaseMapper;
 import com.peng.itrat.model.system.ScoreRule;
 import org.apache.ibatis.annotations.Param;
 

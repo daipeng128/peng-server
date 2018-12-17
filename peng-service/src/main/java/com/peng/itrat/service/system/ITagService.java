@@ -1,7 +1,7 @@
 package com.peng.itrat.service.system;
 
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.model.Page;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.model.Page;
 import com.peng.itrat.model.system.Tag;
 
 public interface ITagService {

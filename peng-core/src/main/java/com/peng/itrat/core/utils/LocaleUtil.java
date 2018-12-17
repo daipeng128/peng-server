@@ -18,8 +18,8 @@ public class LocaleUtil {
         return (Locale)tlLocale.get();
     }
 
-    public static void setMessageSource(MessageSource messageSource) {
-        messageSource = messageSource;
+    public static void setMessageSource(MessageSource messageSourc) {
+        messageSource = messageSourc;
     }
 
     public static MessageSource getMessageSource() {

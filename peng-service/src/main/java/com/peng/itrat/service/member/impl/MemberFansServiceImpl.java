@@ -2,10 +2,10 @@ package com.peng.itrat.service.member.impl;
 
 import com.peng.itrat.dao.member.IMemberFansDao;
 import com.peng.itrat.service.member.IMemberFansService;
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.exception.OpeErrorException;
-import com.lxinet.jeesns.core.model.Page;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.exception.OpeErrorException;
+import com.peng.itrat.core.model.Page;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.model.member.MemberFans;
 import org.springframework.stereotype.Service;
 

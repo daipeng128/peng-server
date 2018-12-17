@@ -2,7 +2,7 @@ package com.peng.itrat.dao.member;
 
 
 import com.peng.itrat.model.member.MemGroup;
-import com.lxinet.jeesns.core.dao.BaseMapper;
+import com.peng.itrat.core.dao.BaseMapper;
 
 /**
  * 会员分组DAO

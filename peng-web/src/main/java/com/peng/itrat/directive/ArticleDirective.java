@@ -2,8 +2,8 @@ package com.peng.itrat.directive;
 
 import com.peng.itrat.model.cms.Article;
 import com.peng.itrat.service.cms.IArticleService;
-import com.lxinet.jeesns.core.directive.BaseDirective;
-import com.lxinet.jeesns.core.handler.DirectiveHandler;
+import com.peng.itrat.core.directive.BaseDirective;
+import com.peng.itrat.core.handler.DirectiveHandler;
 import freemarker.template.*;
 import org.springframework.stereotype.Component;
 import javax.annotation.Resource;

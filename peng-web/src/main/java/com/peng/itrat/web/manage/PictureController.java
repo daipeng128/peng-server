@@ -1,10 +1,10 @@
 package com.peng.itrat.web.manage;
 
 import com.peng.itrat.interceptor.AdminLoginInterceptor;
-import com.lxinet.jeesns.core.annotation.Before;
-import com.lxinet.jeesns.core.consts.AppTag;
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.model.Page;
+import com.peng.itrat.core.annotation.Before;
+import com.peng.itrat.core.consts.AppTag;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.model.Page;
 import com.peng.itrat.service.picture.IPictureService;
 import com.peng.itrat.service.system.ITagService;
 import com.peng.itrat.web.common.BaseController;

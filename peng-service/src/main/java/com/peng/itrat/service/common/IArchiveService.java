@@ -2,7 +2,7 @@ package com.peng.itrat.service.common;
 
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.model.common.Archive;
-import com.lxinet.jeesns.core.dto.ResultModel;
+import com.peng.itrat.core.dto.ResultModel;
 
 
 /**

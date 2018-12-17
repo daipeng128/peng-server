@@ -1,7 +1,7 @@
 package com.peng.itrat.service.weibo;
 
 
-import com.lxinet.jeesns.core.service.IBaseService;
+import com.peng.itrat.core.service.IBaseService;
 import com.peng.itrat.model.weibo.WeiboFavor;
 
 /**

@@ -2,7 +2,7 @@ package com.peng.itrat.service.system.impl;
 
 import com.peng.itrat.dao.system.IScoreRuleDao;
 import com.peng.itrat.service.system.IScoreRuleService;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.model.system.ScoreRule;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;

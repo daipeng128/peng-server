@@ -1,6 +1,6 @@
 package com.peng.itrat.service.member.impl;
 
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.dao.member.IMemberTokenDao;
 import com.peng.itrat.model.member.MemberToken;
 import com.peng.itrat.service.member.IMemberTokenService;

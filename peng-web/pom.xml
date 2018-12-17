@@ -16,9 +16,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.lxinet</groupId>
-			<artifactId>jeesns-core</artifactId>
-			<version>1.4</version>
+			<groupId>com.peng</groupId>
+			<artifactId>peng-core</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.peng</groupId>
@@ -155,6 +155,15 @@
 			<groupId>com.peng</groupId>
 			<artifactId>peng-service</artifactId>
 			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.peng</groupId>
+			<artifactId>peng-core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
 		</dependency>
 	</dependencies>
 

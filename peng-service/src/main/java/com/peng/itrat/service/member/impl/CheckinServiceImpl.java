@@ -2,10 +2,10 @@ package com.peng.itrat.service.member.impl;
 
 import com.peng.itrat.dao.member.ICheckinDao;
 import com.peng.itrat.service.member.IScoreDetailService;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.utils.ScoreRuleConsts;
-import com.lxinet.jeesns.core.exception.OpeErrorException;
-import com.lxinet.jeesns.core.model.Page;
+import com.peng.itrat.core.exception.OpeErrorException;
+import com.peng.itrat.core.model.Page;
 import com.peng.itrat.model.member.Checkin;
 import com.peng.itrat.service.member.ICheckinService;
 import org.springframework.stereotype.Service;

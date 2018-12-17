@@ -1,7 +1,7 @@
 package com.peng.itrat.dao.common;
 
-import com.lxinet.jeesns.core.dao.BaseMapper;
-import com.lxinet.jeesns.core.model.Page;
+import com.peng.itrat.core.dao.BaseMapper;
+import com.peng.itrat.core.model.Page;
 import com.peng.itrat.model.common.Link;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;

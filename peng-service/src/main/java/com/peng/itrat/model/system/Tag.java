@@ -1,9 +1,9 @@
 package com.peng.itrat.model.system;
 
-import com.lxinet.jeesns.core.annotation.Column;
-import com.lxinet.jeesns.core.annotation.Id;
-import com.lxinet.jeesns.core.annotation.Table;
-import com.lxinet.jeesns.core.enums.IdType;
+import com.peng.itrat.core.annotation.Column;
+import com.peng.itrat.core.annotation.Id;
+import com.peng.itrat.core.annotation.Table;
+import com.peng.itrat.core.enums.IdType;
 
 @Table("tbl_tag")
 public class Tag {

@@ -1,7 +1,7 @@
 package com.peng.itrat.model.system;
 
-import com.lxinet.jeesns.core.annotation.Column;
-import com.lxinet.jeesns.core.annotation.Table;
+import com.peng.itrat.core.annotation.Column;
+import com.peng.itrat.core.annotation.Table;
 
 import java.io.Serializable;
 

@@ -1,6 +1,6 @@
 package com.peng.itrat.utils;
 
-import com.lxinet.jeesns.core.utils.LocaleUtil;
+import com.peng.itrat.core.utils.LocaleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;

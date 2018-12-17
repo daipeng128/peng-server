@@ -1,6 +1,6 @@
 package com.peng.itrat.dao.member;
 
-import com.lxinet.jeesns.core.dao.BaseMapper;
+import com.peng.itrat.core.dao.BaseMapper;
 import com.peng.itrat.model.member.MemberToken;
 import org.apache.ibatis.annotations.Param;
 

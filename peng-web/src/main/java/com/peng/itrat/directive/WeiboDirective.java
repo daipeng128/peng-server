@@ -1,8 +1,8 @@
 package com.peng.itrat.directive;
 
 import com.peng.itrat.utils.MemberUtil;
-import com.lxinet.jeesns.core.directive.BaseDirective;
-import com.lxinet.jeesns.core.handler.DirectiveHandler;
+import com.peng.itrat.core.directive.BaseDirective;
+import com.peng.itrat.core.handler.DirectiveHandler;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.model.weibo.Weibo;
 import com.peng.itrat.service.weibo.IWeiboService;

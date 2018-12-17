@@ -1,7 +1,7 @@
 package com.peng.itrat.dao.cms;
 
 import com.peng.itrat.model.cms.ArticleFavor;
-import com.lxinet.jeesns.core.dao.BaseMapper;
+import com.peng.itrat.core.dao.BaseMapper;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;

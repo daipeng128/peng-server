@@ -1,10 +1,12 @@
 package com.peng.itrat.core.aop;
 
+import com.peng.itrat.core.utils.PageUtil;
 import com.peng.itrat.core.annotation.UsePage;
 import com.peng.itrat.core.model.Page;
-import com.peng.itrat.core.utils.PageUtil;
+
 import java.lang.reflect.Method;
 import javax.servlet.http.HttpServletRequest;
+
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -20,7 +22,7 @@ public class PageAspectAop {
     public PageAspectAop() {
     }
 
-    @Pointcut("@annotation(com.lxinet.jeesns.core.annotation.UsePage)")
+    @Pointcut("@annotation(com.peng.itrat.core.annotation.UsePage)")
     public void annotationPointCut() {
     }
 

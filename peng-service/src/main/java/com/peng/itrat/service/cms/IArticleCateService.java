@@ -2,7 +2,7 @@ package com.peng.itrat.service.cms;
 
 
 import com.peng.itrat.model.cms.ArticleCate;
-import com.lxinet.jeesns.core.service.IBaseService;
+import com.peng.itrat.core.service.IBaseService;
 
 import java.util.List;
 

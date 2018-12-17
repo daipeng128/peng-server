@@ -2,8 +2,8 @@ package com.peng.itrat.service.cms;
 
 import com.peng.itrat.model.cms.ArticleComment;
 import com.peng.itrat.model.member.Member;
-import com.lxinet.jeesns.core.model.Page;
-import com.lxinet.jeesns.core.service.IBaseService;
+import com.peng.itrat.core.model.Page;
+import com.peng.itrat.core.service.IBaseService;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.peng.itrat.dao.cms;
 
 import com.peng.itrat.model.cms.ArticleCate;
-import com.lxinet.jeesns.core.dao.BaseMapper;
+import com.peng.itrat.core.dao.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

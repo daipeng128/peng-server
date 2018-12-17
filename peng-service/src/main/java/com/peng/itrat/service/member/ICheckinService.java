@@ -1,7 +1,7 @@
 package com.peng.itrat.service.member;
 
-import com.lxinet.jeesns.core.model.Page;
-import com.lxinet.jeesns.core.service.IBaseService;
+import com.peng.itrat.core.model.Page;
+import com.peng.itrat.core.service.IBaseService;
 import com.peng.itrat.model.member.Checkin;
 
 import java.util.List;

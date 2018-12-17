@@ -2,12 +2,12 @@ package com.peng.itrat.service.group.impl;
 
 import com.peng.itrat.dao.group.IGroupTopicCommentDao;
 import com.peng.itrat.model.member.Member;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
-import com.lxinet.jeesns.core.utils.ValidUtill;
-import com.lxinet.jeesns.core.consts.AppTag;
-import com.lxinet.jeesns.core.enums.MessageType;
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.model.Page;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.utils.ValidUtill;
+import com.peng.itrat.core.consts.AppTag;
+import com.peng.itrat.core.enums.MessageType;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.model.Page;
 import com.peng.itrat.model.group.GroupTopic;
 import com.peng.itrat.model.group.GroupTopicComment;
 import com.peng.itrat.service.group.IGroupTopicCommentService;

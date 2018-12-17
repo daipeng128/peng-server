@@ -1,7 +1,7 @@
 package com.peng.itrat.service.member.impl;
 
 import com.peng.itrat.model.member.ValidateCode;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.dao.member.IValidateCodeDao;
 import com.peng.itrat.service.member.IValidateCodeService;
 import org.springframework.stereotype.Service;

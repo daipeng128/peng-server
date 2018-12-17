@@ -3,11 +3,11 @@ package com.peng.itrat.model.group;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.peng.itrat.model.member.Member;
-import com.lxinet.jeesns.core.annotation.Column;
-import com.lxinet.jeesns.core.annotation.Id;
-import com.lxinet.jeesns.core.annotation.Table;
-import com.lxinet.jeesns.core.enums.FillTime;
-import com.lxinet.jeesns.core.enums.IdType;
+import com.peng.itrat.core.annotation.Column;
+import com.peng.itrat.core.annotation.Id;
+import com.peng.itrat.core.annotation.Table;
+import com.peng.itrat.core.enums.FillTime;
+import com.peng.itrat.core.enums.IdType;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;

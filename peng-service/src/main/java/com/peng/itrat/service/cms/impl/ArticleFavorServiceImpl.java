@@ -1,6 +1,6 @@
 package com.peng.itrat.service.cms.impl;
 
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.dao.cms.IArticleFavorDao;
 import com.peng.itrat.model.cms.ArticleFavor;
 import com.peng.itrat.service.cms.IArticleFavorService;

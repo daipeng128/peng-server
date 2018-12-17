@@ -1,7 +1,7 @@
 package com.peng.itrat.service.group.impl;
 
-import com.lxinet.jeesns.core.exception.OpeErrorException;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.exception.OpeErrorException;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.dao.group.IGroupTypeDao;
 import com.peng.itrat.model.group.GroupType;
 import com.peng.itrat.service.group.IGroupTypeService;

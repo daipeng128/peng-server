@@ -1,6 +1,6 @@
 package com.peng.itrat.service.system;
 
-import com.lxinet.jeesns.core.service.IBaseService;
+import com.peng.itrat.core.service.IBaseService;
 import com.peng.itrat.model.system.Action;
 
 import java.util.List;

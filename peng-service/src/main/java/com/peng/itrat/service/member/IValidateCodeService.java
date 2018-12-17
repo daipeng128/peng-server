@@ -2,7 +2,7 @@ package com.peng.itrat.service.member;
 
 
 import com.peng.itrat.model.member.ValidateCode;
-import com.lxinet.jeesns.core.service.IBaseService;
+import com.peng.itrat.core.service.IBaseService;
 
 /**
  * 验证码Service接口

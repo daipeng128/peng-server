@@ -1,8 +1,8 @@
 package com.peng.itrat.web.manage;
 
 import com.peng.itrat.interceptor.AdminLoginInterceptor;
-import com.lxinet.jeesns.core.annotation.Before;
-import com.lxinet.jeesns.core.dto.ResultModel;
+import com.peng.itrat.core.annotation.Before;
+import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.model.group.GroupType;
 import com.peng.itrat.service.group.IGroupTypeService;
 import com.peng.itrat.web.common.BaseController;

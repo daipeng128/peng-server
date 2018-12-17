@@ -2,7 +2,7 @@ package com.peng.itrat.service.group.impl;
 
 import com.peng.itrat.dao.group.IGroupTopicFavorDao;
 import com.peng.itrat.service.group.IGroupTopicFavorService;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.model.group.GroupTopicFavor;
 import org.springframework.stereotype.Service;
 

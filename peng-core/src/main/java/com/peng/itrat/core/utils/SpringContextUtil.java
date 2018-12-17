@@ -10,7 +10,7 @@ public class SpringContextUtil implements ApplicationContextAware {
     }
 
     public void setApplicationContext(ApplicationContext applicationContext) {
-        applicationContext = applicationContext;
+        this.applicationContext = applicationContext;
     }
 
     public static ApplicationContext getApplicationContext() {

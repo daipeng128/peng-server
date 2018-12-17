@@ -1,6 +1,6 @@
 package com.peng.itrat.dao.weibo;
 
-import com.lxinet.jeesns.core.dao.BaseMapper;
+import com.peng.itrat.core.dao.BaseMapper;
 import com.peng.itrat.model.weibo.WeiboTopic;
 import org.apache.ibatis.annotations.Param;
 

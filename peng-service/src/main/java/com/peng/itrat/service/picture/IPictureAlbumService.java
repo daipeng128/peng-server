@@ -1,8 +1,8 @@
 package com.peng.itrat.service.picture;
 
 import com.peng.itrat.model.picture.PictureAlbum;
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.model.Page;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.model.Page;
 
 /**
  * Created by zchuanzhao on 2017/11/03.

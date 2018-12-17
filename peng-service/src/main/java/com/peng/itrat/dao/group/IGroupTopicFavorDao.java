@@ -1,6 +1,6 @@
 package com.peng.itrat.dao.group;
 
-import com.lxinet.jeesns.core.dao.BaseMapper;
+import com.peng.itrat.core.dao.BaseMapper;
 import com.peng.itrat.model.group.GroupTopicFavor;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;

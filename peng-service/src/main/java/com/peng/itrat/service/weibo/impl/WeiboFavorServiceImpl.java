@@ -3,7 +3,7 @@ package com.peng.itrat.service.weibo.impl;
 import com.peng.itrat.dao.weibo.IWeiboFavorDao;
 import com.peng.itrat.model.weibo.WeiboFavor;
 import com.peng.itrat.service.weibo.IWeiboFavorService;
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 

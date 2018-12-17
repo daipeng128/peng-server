@@ -1,7 +1,7 @@
 package com.peng.itrat.interceptor;
 
-import com.lxinet.jeesns.core.interceptor.JeesnsInterceptor;
-import com.lxinet.jeesns.core.utils.SpringContextUtil;
+import com.peng.itrat.core.interceptor.JeesnsInterceptor;
+import com.peng.itrat.core.utils.SpringContextUtil;
 import com.peng.itrat.utils.MemberUtil;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.service.member.IMemberService;

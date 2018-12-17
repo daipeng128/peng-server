@@ -1,6 +1,6 @@
 package com.peng.itrat.service.weibo.impl;
 
-import com.lxinet.jeesns.core.service.impl.BaseServiceImpl;
+import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.dao.weibo.IWeiboTopicDao;
 import com.peng.itrat.model.weibo.WeiboTopic;
 import com.peng.itrat.service.weibo.IWeiboTopicService;

@@ -1,7 +1,7 @@
 package com.peng.itrat.service.group;
 
 import com.peng.itrat.model.group.GroupType;
-import com.lxinet.jeesns.core.service.IBaseService;
+import com.peng.itrat.core.service.IBaseService;
 
 import java.util.List;
 

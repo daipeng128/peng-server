@@ -1,6 +1,6 @@
 package com.peng.itrat.service.member;
 
-import com.lxinet.jeesns.core.service.IBaseService;
+import com.peng.itrat.core.service.IBaseService;
 import com.peng.itrat.model.member.Financial;
 import java.util.List;
 

@@ -1,13 +1,17 @@
 package com.peng.itrat.web.front;
 
+import com.peng.itrat.core.utils.Const;
+import com.peng.itrat.core.utils.ErrorUtil;
+import com.peng.itrat.core.utils.ImageUtil;
+import com.peng.itrat.core.utils.ItRatConfig;
+import com.peng.itrat.core.utils.StringUtils;
 import com.peng.itrat.interceptor.UserLoginInterceptor;
 import com.peng.itrat.utils.MemberUtil;
-import com.lxinet.jeesns.core.annotation.Before;
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.exception.NotLoginException;
-import com.lxinet.jeesns.core.exception.ParamException;
-import com.lxinet.jeesns.core.model.Page;
-import com.lxinet.jeesns.core.utils.*;
+import com.peng.itrat.core.annotation.Before;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.exception.NotLoginException;
+import com.peng.itrat.core.exception.ParamException;
+import com.peng.itrat.core.model.Page;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.model.picture.Picture;
 import com.peng.itrat.model.picture.PictureAlbum;
@@ -50,7 +54,7 @@ public class PictureController extends BaseController {
     @Resource
     private IMemberService memberService;
     @Resource
-    private JeesnsConfig jeesnsConfig;
+    private ItRatConfig itRatConfig;
 
     @RequestMapping(value = "/picture/album/{memberId}",method = RequestMethod.GET)
     @Before(UserLoginInterceptor.class)
@@ -59,7 +63,7 @@ public class PictureController extends BaseController {
         ResultModel resultModel = pictureAlbumService.listByMember(memberId);
         model.addAttribute("model", resultModel);
         model.addAttribute("member",findMember);
-        return jeesnsConfig.getFrontTemplate() + "/picture/album";
+        return itRatConfig.getFrontTemplate() + "/picture/album";
     }
 
     @RequestMapping(value = "/member/picture/album",method = RequestMethod.GET)
@@ -98,15 +102,15 @@ public class PictureController extends BaseController {
         int loginMemberId = loginMember == null ? 0 : loginMember.getId();
         PictureAlbum pictureAlbum = pictureAlbumService.findById(albumId);
         if (pictureAlbum == null || memberId.intValue() != pictureAlbum.getMemberId().intValue()){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1010, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model,-1010, Const.INDEX_ERROR_FTL_PATH);
         }
         if (pictureAlbum.getJuri() != 0){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1012, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model,-1012, Const.INDEX_ERROR_FTL_PATH);
         }
         ResultModel resultModel = pictureService.listByAlbum(page,albumId,loginMemberId);
         model.addAttribute("model", resultModel);
         model.addAttribute("pictureAlbum",pictureAlbum);
-        return jeesnsConfig.getFrontTemplate() + "/picture/list";
+        return itRatConfig.getFrontTemplate() + "/picture/list";
     }
 
     @RequestMapping(value = "/member/picture/list/{memberId}-{albumId}",method = RequestMethod.GET)
@@ -116,11 +120,11 @@ public class PictureController extends BaseController {
         Member loginMember = MemberUtil.getLoginMember(request);
         int loginMemberId = loginMember == null ? 0 : loginMember.getId();
         if (loginMemberId != memberId){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1001, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model,-1001, Const.INDEX_ERROR_FTL_PATH);
         }
         PictureAlbum pictureAlbum = pictureAlbumService.findById(albumId);
         if (pictureAlbum == null || memberId.intValue() != pictureAlbum.getMemberId().intValue()){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1010, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model,-1010, Const.INDEX_ERROR_FTL_PATH);
         }
         ResultModel resultModel = pictureService.listByAlbum(page,albumId,loginMemberId);
         model.addAttribute("model", resultModel);
@@ -135,7 +139,7 @@ public class PictureController extends BaseController {
         Page page = new Page(request);
         ResultModel resultModel = pictureService.listByPage(page,loginMemberId);
         model.addAttribute("model", resultModel);
-        return jeesnsConfig.getFrontTemplate() + "/picture/index";
+        return itRatConfig.getFrontTemplate() + "/picture/index";
     }
 
     @RequestMapping(value = "/picture/indexData",method = RequestMethod.GET)
@@ -154,10 +158,10 @@ public class PictureController extends BaseController {
         int loginMemberId = loginMember == null ? 0 : loginMember.getId();
         Picture picture = pictureService.findById(pictureId,loginMemberId);
         if (picture == null){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1011, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model,-1011, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("picture",picture);
-        return jeesnsConfig.getFrontTemplate() + "/picture/detail";
+        return itRatConfig.getFrontTemplate() + "/picture/detail";
     }
 
 
@@ -202,10 +206,10 @@ public class PictureController extends BaseController {
         PictureAlbum pictureAlbum = pictureAlbumService.findById(albumId);
         Member loginMember = MemberUtil.getLoginMember(request);
         if (pictureAlbum == null){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1010, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model,-1010, Const.INDEX_ERROR_FTL_PATH);
         }
         if (pictureAlbum.getMemberId().intValue() != loginMember.getId().intValue()){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1001, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model,-1001, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("albumId",albumId);
         return MEMBER_FTL_PATH + "/picture/uploadPic";

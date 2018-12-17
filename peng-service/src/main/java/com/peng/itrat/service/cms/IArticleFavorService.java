@@ -2,7 +2,7 @@ package com.peng.itrat.service.cms;
 
 
 import com.peng.itrat.model.cms.ArticleFavor;
-import com.lxinet.jeesns.core.service.IBaseService;
+import com.peng.itrat.core.service.IBaseService;
 
 /**
  * 文章点赞Service接口

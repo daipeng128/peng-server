@@ -1,8 +1,8 @@
 package com.peng.itrat.dao.system;
 
 import com.peng.itrat.model.system.Tag;
-import com.lxinet.jeesns.core.dao.BaseMapper;
-import com.lxinet.jeesns.core.model.Page;
+import com.peng.itrat.core.dao.BaseMapper;
+import com.peng.itrat.core.model.Page;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

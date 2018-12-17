@@ -1,7 +1,7 @@
 package com.peng.itrat.dao.group;
 
 import com.peng.itrat.model.group.GroupType;
-import com.lxinet.jeesns.core.dao.BaseMapper;
+import com.peng.itrat.core.dao.BaseMapper;
 
 /**
  * @author: zchuanzhao

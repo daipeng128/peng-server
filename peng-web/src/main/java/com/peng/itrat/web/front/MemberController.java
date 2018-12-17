@@ -1,13 +1,17 @@
 package com.peng.itrat.web.front;
 
-import com.lxinet.jeesns.core.invoke.JeesnsInvoke;
+import com.peng.itrat.core.invoke.JeesnsInvoke;
+import com.peng.itrat.core.utils.Const;
+import com.peng.itrat.core.utils.ErrorUtil;
+import com.peng.itrat.core.utils.ItRatConfig;
+import com.peng.itrat.core.utils.StringUtils;
+import com.peng.itrat.core.utils.ValidUtill;
 import com.peng.itrat.utils.MemberUtil;
-import com.lxinet.jeesns.core.exception.ParamException;
+import com.peng.itrat.core.exception.ParamException;
 import com.peng.itrat.interceptor.UserLoginInterceptor;
-import com.lxinet.jeesns.core.annotation.Before;
-import com.lxinet.jeesns.core.dto.ResultModel;
-import com.lxinet.jeesns.core.model.Page;
-import com.lxinet.jeesns.core.utils.*;
+import com.peng.itrat.core.annotation.Before;
+import com.peng.itrat.core.dto.ResultModel;
+import com.peng.itrat.core.model.Page;
 import com.peng.itrat.web.common.BaseController;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.service.member.IMemberService;
@@ -40,7 +44,7 @@ public class MemberController extends BaseController {
     @Resource
     private IMessageService messageService;
     @Resource
-    private JeesnsConfig jeesnsConfig;
+    private ItRatConfig itRatConfig;
     private static final String EXT_CARDKEY_SERVICE = "extCardkeyService";
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
@@ -315,11 +319,11 @@ public class MemberController extends BaseController {
     @Before(UserLoginInterceptor.class)
     public String sendMessageBox(@RequestParam(value = "mid") Integer memberId,Model model){
         if(memberId == null){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1000, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1000, Const.INDEX_ERROR_FTL_PATH);
         }
         Member findMember= memberService.findById(memberId);
         if(findMember == null){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1005, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1005, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("member", findMember);
         return MEMBER_FTL_PATH + "sendMessageBox";
