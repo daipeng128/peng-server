@@ -1,13 +1,16 @@
 package com.peng.itrat.model.cms;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.peng.itrat.core.annotation.Column;
 import com.peng.itrat.core.annotation.Id;
 import com.peng.itrat.core.annotation.Table;
+import com.peng.itrat.core.enums.FillTime;
 import com.peng.itrat.core.enums.IdType;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 文章栏目实体类

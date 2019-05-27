@@ -2,7 +2,7 @@ package com.peng.itrat.web.front;
 
 import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.model.Page;
-import com.peng.itrat.core.utils.ItRatConfig;
+import com.peng.itrat.core.utils.JeesnsConfig;
 import com.peng.itrat.web.common.BaseController;
 import com.peng.itrat.model.system.ActionLog;
 import com.peng.itrat.service.system.IActionLogService;
@@ -21,14 +21,14 @@ public class ActionController extends BaseController {
     @Resource
     private IActionLogService actionLogService;
     @Resource
-    private ItRatConfig itRatConfig;
+    private JeesnsConfig jeesnsConfig;
 
     @RequestMapping("list")
     public String list(Model model){
         Page page = new Page(request);
         ResultModel<ActionLog> actionList = actionLogService.memberActionLog(page,0);
         model.addAttribute("model", actionList);
-        return itRatConfig.getFrontTemplate() + "/action/list";
+        return jeesnsConfig.getFrontTemplate() + "/action/list";
     }
 
 

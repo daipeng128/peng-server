@@ -1,17 +1,13 @@
 package com.peng.itrat.web.front;
 
 import com.peng.itrat.core.invoke.JeesnsInvoke;
-import com.peng.itrat.core.utils.Const;
-import com.peng.itrat.core.utils.ErrorUtil;
-import com.peng.itrat.core.utils.ItRatConfig;
-import com.peng.itrat.core.utils.StringUtils;
-import com.peng.itrat.core.utils.ValidUtill;
 import com.peng.itrat.utils.MemberUtil;
 import com.peng.itrat.core.exception.ParamException;
 import com.peng.itrat.interceptor.UserLoginInterceptor;
 import com.peng.itrat.core.annotation.Before;
 import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.model.Page;
+import com.peng.itrat.core.utils.*;
 import com.peng.itrat.web.common.BaseController;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.service.member.IMemberService;
@@ -19,7 +15,7 @@ import com.peng.itrat.service.member.IMessageService;
 import com.peng.itrat.model.system.ActionLog;
 import com.peng.itrat.service.system.IActionLogService;
 import com.peng.itrat.service.system.IConfigService;
-//import com.lxinet.jeesns.modules.weibo.service.IWeiboService;
+//import com.peng.itrat.modules.weibo.service.IWeiboService;
 import com.peng.itrat.utils.ConfigUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,7 +40,7 @@ public class MemberController extends BaseController {
     @Resource
     private IMessageService messageService;
     @Resource
-    private ItRatConfig itRatConfig;
+    private JeesnsConfig jeesnsConfig;
     private static final String EXT_CARDKEY_SERVICE = "extCardkeyService";
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
@@ -319,11 +315,11 @@ public class MemberController extends BaseController {
     @Before(UserLoginInterceptor.class)
     public String sendMessageBox(@RequestParam(value = "mid") Integer memberId,Model model){
         if(memberId == null){
-            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1000, Const.INDEX_ERROR_FTL_PATH);
+            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1000, Const.INDEX_ERROR_FTL_PATH);
         }
         Member findMember= memberService.findById(memberId);
         if(findMember == null){
-            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1005, Const.INDEX_ERROR_FTL_PATH);
+            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1005, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("member", findMember);
         return MEMBER_FTL_PATH + "sendMessageBox";

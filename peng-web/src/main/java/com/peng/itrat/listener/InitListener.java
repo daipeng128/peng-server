@@ -1,7 +1,7 @@
 package com.peng.itrat.listener;
 
 import com.peng.itrat.core.utils.Const;
-import com.peng.itrat.core.utils.ItRatConfig;
+import com.peng.itrat.core.utils.JeesnsConfig;
 import com.peng.itrat.core.utils.SpringContextUtil;
 import com.peng.itrat.model.system.Config;
 import com.peng.itrat.service.system.IConfigService;
@@ -24,13 +24,13 @@ public class InitListener implements ServletContextListener {
         try {
             Const.PROJECT_PATH = sce.getServletContext().getContextPath();
             sce.getServletContext().setAttribute("basePath", Const.PROJECT_PATH);
-            ItRatConfig itRatConfig = SpringContextUtil.getBean("itRatConfig");
-            sce.getServletContext().setAttribute("itRatConfig", itRatConfig);
-            String frontTemplate = itRatConfig.getFrontTemplate();
+            JeesnsConfig jeesnsConfig = SpringContextUtil.getBean("jeesnsConfig");
+            sce.getServletContext().setAttribute("jeesnsConfig",jeesnsConfig);
+            String frontTemplate = jeesnsConfig.getFrontTemplate();
             sce.getServletContext().setAttribute("frontTemplate",frontTemplate);
-            String managePath = Const.PROJECT_PATH + "/" + itRatConfig.getManagePath();
-            Const.GROUP_PATH = Const.PROJECT_PATH + "/" + itRatConfig.getGroupPath();
-            Const.WEIBO_PATH = Const.PROJECT_PATH + "/" + itRatConfig.getWeiboPath();
+            String managePath = Const.PROJECT_PATH + "/" + jeesnsConfig.getManagePath();
+            Const.GROUP_PATH = Const.PROJECT_PATH + "/" + jeesnsConfig.getGroupPath();
+            Const.WEIBO_PATH = Const.PROJECT_PATH + "/" + jeesnsConfig.getWeiboPath();
             sce.getServletContext().setAttribute("managePath",managePath);
             sce.getServletContext().setAttribute("groupPath",Const.GROUP_PATH);
             sce.getServletContext().setAttribute("weiboPath",Const.WEIBO_PATH);

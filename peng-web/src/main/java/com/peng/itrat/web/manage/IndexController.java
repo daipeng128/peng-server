@@ -6,7 +6,7 @@ import com.peng.itrat.core.annotation.Before;
 import com.peng.itrat.core.annotation.Clear;
 import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.utils.Const;
-import com.peng.itrat.core.utils.ItRatConfig;
+import com.peng.itrat.core.utils.JeesnsConfig;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.service.common.ICommonService;
 import com.peng.itrat.service.member.IMemberService;
@@ -29,7 +29,7 @@ public class IndexController extends BaseController {
     @Resource
     private IMemberService memberService;
     @Resource
-    private ItRatConfig itRatConfig;
+    private JeesnsConfig jeesnsConfig;
     @Resource
     private ICommonService commonService;
 
@@ -114,7 +114,7 @@ public class IndexController extends BaseController {
         if(loginMember != null){
             MemberUtil.setLoginMember(request,loginMember);
             if (com.peng.itrat.core.utils.StringUtils.isEmpty(redirectUrl)){
-                redirectUrl = request.getContextPath() + "/" + itRatConfig.getManagePath() + "/";
+                redirectUrl = request.getContextPath() + "/" + jeesnsConfig.getManagePath() + "/";
             }
             return new ResultModel(2,"登录成功",redirectUrl);
         }else {
@@ -127,7 +127,7 @@ public class IndexController extends BaseController {
         if (com.peng.itrat.core.utils.StringUtils.isNotBlank(msg)){
             model.addAttribute("msg", msg);
         }
-        return itRatConfig.getManageTemplate() + "/common/error";
+        return jeesnsConfig.getManageTemplate() + "/common/error";
     }
 
 }

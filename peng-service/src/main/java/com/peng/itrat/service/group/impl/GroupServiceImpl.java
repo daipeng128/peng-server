@@ -1,12 +1,11 @@
 package com.peng.itrat.service.group.impl;
 
-import com.peng.itrat.core.utils.Const;
-import com.peng.itrat.core.utils.StringUtils;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.service.group.IGroupService;
 import com.peng.itrat.core.service.impl.BaseServiceImpl;
 import com.peng.itrat.core.utils.ValidUtill;
 import com.peng.itrat.core.exception.OpeErrorException;
+import com.peng.itrat.core.utils.*;
 import com.peng.itrat.model.group.Group;
 import com.peng.itrat.model.member.Financial;
 import com.peng.itrat.model.system.ScoreRule;
