@@ -5,7 +5,7 @@ import com.peng.itrat.utils.MemberUtil;
 import com.peng.itrat.core.annotation.Before;
 import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.model.Page;
-import com.peng.itrat.core.utils.JeesnsConfig;
+import com.peng.itrat.core.utils.ItRatConfig;
 import com.peng.itrat.model.member.Checkin;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.service.member.ICheckinService;
@@ -28,7 +28,7 @@ public class CheckinController extends BaseController {
     @Resource
     private ICheckinService checkinService;
     @Resource
-    private JeesnsConfig jeesnsConfig;
+    private ItRatConfig itRatConfig;
 
     @RequestMapping({"","index"})
     public String index(Model model){
@@ -38,7 +38,7 @@ public class CheckinController extends BaseController {
         resultModel.setData(list);
         model.addAttribute("model",resultModel);
         model.addAttribute("todayContinueList",checkinService.todayContinueList());
-        return jeesnsConfig.getFrontTemplate() + "/checkin/index";
+        return itRatConfig.getFrontTemplate() + "/checkin/index";
     }
 
     @RequestMapping("save")

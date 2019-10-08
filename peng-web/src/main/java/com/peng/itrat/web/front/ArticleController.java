@@ -1,5 +1,6 @@
 package com.peng.itrat.web.front;
 
+import com.peng.itrat.core.utils.StringUtils;
 import com.peng.itrat.utils.MemberUtil;
 import com.peng.itrat.core.enums.Messages;
 import com.peng.itrat.core.exception.NotFountException;
@@ -10,7 +11,7 @@ import com.peng.itrat.service.common.IArchiveService;
 import com.peng.itrat.core.annotation.Before;
 import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.model.Page;
-import com.peng.itrat.core.utils.*;
+import com.peng.itrat.core.utils.ItRatConfig;
 import com.peng.itrat.web.common.BaseController;
 import com.peng.itrat.model.cms.ArticleCate;
 import com.peng.itrat.model.cms.Article;
@@ -36,7 +37,7 @@ import java.util.List;
 @RequestMapping("/article")
 public class ArticleController extends BaseController {
     @Resource
-    private JeesnsConfig jeesnsConfig;
+    private ItRatConfig itRatConfig;
     @Resource
     private IArticleCateService articleCateService;
     @Resource
@@ -63,7 +64,7 @@ public class ArticleController extends BaseController {
         model.addAttribute("articleCateList",articleCateList);
         ArticleCate articleCate = articleCateService.findById(cid);
         model.addAttribute("articleCate",articleCate);
-        return jeesnsConfig.getFrontTemplate() + "/cms/list";
+        return itRatConfig.getFrontTemplate() + "/cms/list";
     }
 
     @RequestMapping(value="/detail/{id}",method = RequestMethod.GET)
@@ -80,7 +81,7 @@ public class ArticleController extends BaseController {
         List<ArticleCate> articleCateList = articleCateService.list();
         model.addAttribute("articleCateList",articleCateList);
         model.addAttribute("loginUser",loginMember);
-        return jeesnsConfig.getFrontTemplate() + "/cms/detail";
+        return itRatConfig.getFrontTemplate() + "/cms/detail";
     }
 
     @RequestMapping(value="/add",method = RequestMethod.GET)
@@ -88,7 +89,7 @@ public class ArticleController extends BaseController {
     public String add(Model model) {
         List<ArticleCate> cateList = articleCateService.list();
         model.addAttribute("cateList",cateList);
-        return jeesnsConfig.getFrontTemplate() + "/cms/add";
+        return itRatConfig.getFrontTemplate() + "/cms/add";
     }
 
     @RequestMapping(value="/save",method = RequestMethod.POST)
@@ -125,7 +126,7 @@ public class ArticleController extends BaseController {
         List<ArticleCate> cateList = articleCateService.list();
         model.addAttribute("cateList",cateList);
         model.addAttribute("loginUser", loginMember);
-        return jeesnsConfig.getFrontTemplate() + "/cms/edit";
+        return itRatConfig.getFrontTemplate() + "/cms/edit";
     }
 
     @RequestMapping(value="/update",method = RequestMethod.POST)

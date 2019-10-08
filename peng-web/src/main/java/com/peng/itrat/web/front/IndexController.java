@@ -9,7 +9,7 @@ import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.model.Page;
 import com.peng.itrat.core.utils.Const;
 import com.peng.itrat.core.utils.ErrorUtil;
-import com.peng.itrat.core.utils.JeesnsConfig;
+import com.peng.itrat.core.utils.ItRatConfig;
 import com.peng.itrat.service.common.ILinkService;
 import com.peng.itrat.service.group.IGroupFansService;
 import com.peng.itrat.service.group.IGroupService;
@@ -50,7 +50,7 @@ public class IndexController extends BaseController{
     @Resource
     private IActionLogService actionLogService;
     @Resource
-    private JeesnsConfig jeesnsConfig;
+    private ItRatConfig itRatConfig;
     @Resource
     private IGroupFansService groupFansService;
     @Resource
@@ -70,7 +70,7 @@ public class IndexController extends BaseController{
         page.setPageSize(50);
         model.addAttribute("linkModel",linkModel);
 
-        return jeesnsConfig.getFrontTemplate() + "/index";
+        return itRatConfig.getFrontTemplate() + "/index";
     }
 
     @RequestMapping(value = "u/{id}",method = RequestMethod.GET)
@@ -78,14 +78,14 @@ public class IndexController extends BaseController{
         Page page = new Page(request);
         Member member = memberService.findById(id);
         if(member == null){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1005, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model,-1005, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("member",member);
         Member loginMember = MemberUtil.getLoginMember(request);
         model.addAttribute("loginMember", loginMember);
         ResultModel<ActionLog> list = actionLogService.memberActionLog(page,id);
         model.addAttribute("actionLogModel",list);
-        return jeesnsConfig.getFrontTemplate() + "/u";
+        return itRatConfig.getFrontTemplate() + "/u";
     }
 
     @RequestMapping(value = "u/{id}/home/{type}",method = RequestMethod.GET)
@@ -93,7 +93,7 @@ public class IndexController extends BaseController{
         Page page = new Page(request);
         Member member = memberService.findById(id);
         if(member == null){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1005, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model,-1005, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("member",member);
 
@@ -117,7 +117,7 @@ public class IndexController extends BaseController{
             model.addAttribute("model", memberFansService.fansList(page,id));
         }
         model.addAttribute("type",type);
-        return jeesnsConfig.getFrontTemplate() + "/home";
+        return itRatConfig.getFrontTemplate() + "/home";
     }
 
 
@@ -149,7 +149,7 @@ public class IndexController extends BaseController{
 
     @RequestMapping(value="/404",method = RequestMethod.GET)
     public String jeesns404(){
-        return jeesnsConfig.getFrontTemplate() + "/common/404";
+        return itRatConfig.getFrontTemplate() + "/common/404";
     }
 
     @RequestMapping(value="/error",method = RequestMethod.GET)
@@ -157,7 +157,7 @@ public class IndexController extends BaseController{
         if (StringUtils.isNotBlank(msg)){
             request.setAttribute("msg", msg);
         }
-        return jeesnsConfig.getFrontTemplate() + "/common/error";
+        return itRatConfig.getFrontTemplate() + "/common/error";
     }
 
     /**
@@ -169,6 +169,6 @@ public class IndexController extends BaseController{
     public String link(Model model) {
         ResultModel linkModel = linkService.allList();
         model.addAttribute("linkModel",linkModel);
-        return jeesnsConfig.getFrontTemplate() + "/link";
+        return itRatConfig.getFrontTemplate() + "/link";
     }
 }

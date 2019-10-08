@@ -50,7 +50,7 @@
                     </li>
                     <li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">会员设置</a></li>
                     <li class=""><a data-toggle="tab" href="#tab-3" aria-expanded="false">CMS设置</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-4" aria-expanded="false">微博设置</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-4" aria-expanded="false">圈子设置</a></li>
                     <li class=""><a data-toggle="tab" href="#tab-5" aria-expanded="false">群组设置</a></li>
                 </ul>
                 <div class="tab-content">
@@ -219,14 +219,14 @@
                         <div class="panel-body">
                             <form class="form-horizontal jeesns_form" role="form" action="${managePath}/system/config/weiboUpdate" method="post">
                                 <div class="form-group">
-                                    <label class="col-sm-1 control-label">微博别名</label>
+                                    <label class="col-sm-1 control-label">圈子别名</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="weibo_alias" name="weibo_alias" placeholder="微博别名" value="${weibo_alias}">
-                                        默认为微博，如果需要修改微博访问路径，请修改jeesns.properties中weiboPath的值
+                                        <input type="text" class="form-control" id="weibo_alias" name="weibo_alias" placeholder="圈子别名" value="${weibo_alias}">
+                                        默认为圈子，如果需要修改圈子访问路径，请修改itrat.properties中weiboPath的值
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-1 control-label">微博发布</label>
+                                    <label class="col-sm-1 control-label">圈子发布</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" name="weibo_post">
                                             <option value="0" <#if weibo_post==0>selected</#if>>关闭</option>
@@ -235,9 +235,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-1 control-label">微博字数</label>
+                                    <label class="col-sm-1 control-label">圈子字数</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="weibo_post_maxcontent" name="weibo_post_maxcontent" placeholder="微博字数" value="${weibo_post_maxcontent}">
+                                        <input type="text" class="form-control" id="weibo_post_maxcontent" name="weibo_post_maxcontent" placeholder="圈子字数" value="${weibo_post_maxcontent}">
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -7,7 +7,7 @@ import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.exception.NotFountException;
 import com.peng.itrat.core.model.Page;
 import com.peng.itrat.core.utils.Const;
-import com.peng.itrat.core.utils.JeesnsConfig;
+import com.peng.itrat.core.utils.ItRatConfig;
 import com.peng.itrat.utils.ValidLoginUtill;
 import com.peng.itrat.web.common.BaseController;
 import com.peng.itrat.model.member.Member;
@@ -34,7 +34,7 @@ public class WeiboController extends BaseController {
     @Resource
     private IWeiboCommentService weiboCommentService;
     @Resource
-    private JeesnsConfig jeesnsConfig;
+    private ItRatConfig itRatConfig;
 
     @RequestMapping(value = "/publish",method = RequestMethod.POST)
     @ResponseBody
@@ -54,7 +54,7 @@ public class WeiboController extends BaseController {
         List<Weibo> hotList = weiboService.hotList(loginMemberId);
         model.addAttribute("hotList",hotList);
         model.addAttribute("loginUser", loginMember);
-        return jeesnsConfig.getFrontTemplate() + "/weibo/list";
+        return itRatConfig.getFrontTemplate() + "/weibo/list";
     }
 
     @RequestMapping(value = "/detail/{weiboId}",method = RequestMethod.GET)
@@ -67,7 +67,7 @@ public class WeiboController extends BaseController {
         }
         model.addAttribute("weibo",weibo);
         model.addAttribute("loginUser", loginMember);
-        return jeesnsConfig.getFrontTemplate() + "/weibo/detail";
+        return itRatConfig.getFrontTemplate() + "/weibo/detail";
     }
 
     @RequestMapping(value="/delete/{weiboId}",method = RequestMethod.GET)
@@ -127,7 +127,7 @@ public class WeiboController extends BaseController {
         model.addAttribute("hotList",hotList);
         model.addAttribute("loginUser", loginMember);
         model.addAttribute("topicName", topicName);
-        return jeesnsConfig.getFrontTemplate() + "/weibo/topic";
+        return itRatConfig.getFrontTemplate() + "/weibo/topic";
     }
 
 }

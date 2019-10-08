@@ -3,7 +3,7 @@ package com.peng.itrat.interceptor;
 import com.peng.itrat.core.interceptor.JeesnsInterceptor;
 import com.peng.itrat.core.utils.SpringContextUtil;
 import com.peng.itrat.utils.MemberUtil;
-import com.peng.itrat.core.utils.JeesnsConfig;
+import com.peng.itrat.core.utils.ItRatConfig;
 import com.peng.itrat.model.member.Member;
 import net.sf.json.JSONObject;
 
@@ -31,9 +31,9 @@ public class AdminLoginInterceptor implements JeesnsInterceptor {
                 out.flush();
                 out.close();
             }else {
-                JeesnsConfig jeesnsConfig = SpringContextUtil.getBean("jeesnsConfig");
+                ItRatConfig itRatConfig = SpringContextUtil.getBean("itRatConfig");
                 String redirectUrl = request.getRequestURI();
-                response.sendRedirect(request.getContextPath() + "/" + jeesnsConfig.getManagePath() + "/login?redirectUrl=" + redirectUrl);
+                response.sendRedirect(request.getContextPath() + "/" + itRatConfig.getManagePath() + "/login?redirectUrl=" + redirectUrl);
             }
             return false;
         }

@@ -9,7 +9,7 @@ CREATE TABLE `tbl_picture_album` (
   `description` VARCHAR (255),
   `juri` INT(11) DEFAULT '0' COMMENT '权限，0所有人可以查看，1是相互关注的人可以查看，2是仅自己可以查看',
   `cover` VARCHAR(255),
-  `type` INT(1) DEFAULT '0' COMMENT '0是普通相册，2是微博配图，5是头像相册',
+  `type` INT(1) DEFAULT '0' COMMENT '0是普通相册，2是圈子配图，5是头像相册',
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -91,7 +91,7 @@ CREATE PROCEDURE proc_picture_album()
     REPEAT
       IF NOT Done THEN
         insert into tbl_picture_album(id,create_time,update_time,member_id,name,juri,type,cover)
-        values(memberid,now(),now(),memberid,"微博配图",0,2,"/res/common/images/empty_album.png");
+        values(memberid,now(),now(),memberid,"圈子配图",0,2,"/res/common/images/empty_album.png");
         update tbl_picture set album_id=memberid where member_id=memberid;
       END IF;
       FETCH NEXT FROM rs INTO memberid;

@@ -17,6 +17,7 @@ com/peng/itrat/core/annotation/Table.class
 com/peng/itrat/core/annotation/UsePage.class
 com/peng/itrat/core/consts/MessageField.class
 com/peng/itrat/core/utils/PageUtil.class
+com/peng/itrat/core/utils/ItRatConfig.class
 com/peng/itrat/core/utils/RedirectUrlUtil.class
 com/peng/itrat/core/handler/DirectiveHandler.class
 com/peng/itrat/core/conditions/SqlWrapper.class
@@ -42,7 +43,6 @@ com/peng/itrat/core/exception/ParamException.class
 com/peng/itrat/core/utils/ErrorUtil.class
 com/peng/itrat/core/annotation/Clear.class
 com/peng/itrat/core/utils/UuidUtil.class
-com/peng/itrat/core/utils/JeesnsConfig.class
 com/peng/itrat/core/aop/PageAspectAop$JeePlus.class
 com/peng/itrat/core/utils/SpringContextUtil.class
 com/peng/itrat/core/exception/NotLoginException.class

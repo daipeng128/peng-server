@@ -1,5 +1,8 @@
 package com.peng.itrat.web.front;
 
+import com.peng.itrat.core.utils.Const;
+import com.peng.itrat.core.utils.ErrorUtil;
+import com.peng.itrat.core.utils.StringUtils;
 import com.peng.itrat.interceptor.UserLoginInterceptor;
 import com.peng.itrat.web.common.BaseController;
 import com.peng.itrat.model.group.*;
@@ -10,7 +13,7 @@ import com.peng.itrat.service.common.IArchiveService;
 import com.peng.itrat.core.annotation.Before;
 import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.model.Page;
-import com.peng.itrat.core.utils.*;
+import com.peng.itrat.core.utils.ItRatConfig;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.service.member.IMemberService;
 import org.springframework.stereotype.Controller;
@@ -28,7 +31,7 @@ import java.util.List;
 @RequestMapping("/${groupPath}")
 public class GroupController extends BaseController {
     @Resource
-    private JeesnsConfig jeesnsConfig;
+    private ItRatConfig itRatConfig;
     @Resource
     private IGroupService groupService;
     @Resource
@@ -51,7 +54,7 @@ public class GroupController extends BaseController {
         List<Group> list = groupService.list(1, key);
         model.addAttribute("list", list);
         model.addAttribute("key", key);
-        return jeesnsConfig.getFrontTemplate() + "/group/index";
+        return itRatConfig.getFrontTemplate() + "/group/index";
     }
 
     @RequestMapping(value = "/apply", method = RequestMethod.GET)
@@ -59,7 +62,7 @@ public class GroupController extends BaseController {
     public String apply(Model model) {
         List<GroupType> groupTypeList = groupTypeService.list();
         model.addAttribute("groupTypeList",groupTypeList);
-        return jeesnsConfig.getFrontTemplate() + "/group/apply";
+        return itRatConfig.getFrontTemplate() + "/group/apply";
     }
 
     /**
@@ -74,7 +77,7 @@ public class GroupController extends BaseController {
         Page page = new Page(request);
         Group group = groupService.findById(groupId);
         if (group == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("group", group);
         Member loginMember = MemberUtil.getLoginMember(request);
@@ -127,7 +130,7 @@ public class GroupController extends BaseController {
         model.addAttribute("groupTopicTypeList", groupTopicTypeList);
         model.addAttribute("loginUser", loginMember);
         model.addAttribute("typeId", typeId);
-        return jeesnsConfig.getFrontTemplate() + "/group/detail";
+        return itRatConfig.getFrontTemplate() + "/group/detail";
     }
 
     @RequestMapping(value = "/apply", method = RequestMethod.POST)
@@ -144,10 +147,10 @@ public class GroupController extends BaseController {
         Member loginMember = MemberUtil.getLoginMember(request);
         Group group = groupService.findById(groupId);
         if (group == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
         }
         if (group.getCreator().intValue() != loginMember.getId().intValue()) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("group", group);
         String managerIds = group.getManagers();
@@ -168,7 +171,7 @@ public class GroupController extends BaseController {
         model.addAttribute("groupTypeList",groupTypeList);
         model.addAttribute("managerNames", newManagerNames);
         model.addAttribute("loginUser", loginMember);
-        return jeesnsConfig.getFrontTemplate() + "/group/edit";
+        return itRatConfig.getFrontTemplate() + "/group/edit";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
@@ -184,14 +187,14 @@ public class GroupController extends BaseController {
         Member loginMember = MemberUtil.getLoginMember(request);
         GroupTopic groupTopic = groupTopicService.findById(topicId, loginMember);
         if (groupTopic == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1004, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1004, Const.INDEX_ERROR_FTL_PATH);
         }
         groupTopicService.updateViewCount(groupTopic.getId());
         model.addAttribute("groupTopic", groupTopic);
 
         Group group = groupService.findById(groupTopic.getGroup().getId());
         if (group == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1000, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1000, Const.INDEX_ERROR_FTL_PATH);
         }
         String groupManagers = group.getManagers();
         String[] groupManagerArr = groupManagers.split(",");
@@ -217,7 +220,7 @@ public class GroupController extends BaseController {
         }
         model.addAttribute("isfollow", isfollow);
         model.addAttribute("loginUser", loginMember);
-        return jeesnsConfig.getFrontTemplate() + "/group/topic";
+        return itRatConfig.getFrontTemplate() + "/group/topic";
     }
 
     @RequestMapping(value = "/post/{groupId}", method = RequestMethod.GET)
@@ -226,19 +229,19 @@ public class GroupController extends BaseController {
         Member loginMember = MemberUtil.getLoginMember(request);
         Group group = groupService.findById(groupId);
         if (group == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
         }
         GroupFans groupFans = groupFansService.findByMemberAndGroup(groupId, loginMember.getId());
         if (groupFans == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1003, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1003, Const.INDEX_ERROR_FTL_PATH);
         }
         if (group.getCanPost() == 0) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1006, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1006, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("group", group);
         List<GroupTopicType> groupTopicTypeList = groupTopicTypeService.list(groupId);
         model.addAttribute("groupTopicTypeList", groupTopicTypeList);
-        return jeesnsConfig.getFrontTemplate() + "/group/post";
+        return itRatConfig.getFrontTemplate() + "/group/post";
     }
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
@@ -257,16 +260,16 @@ public class GroupController extends BaseController {
         Member loginMember = MemberUtil.getLoginMember(request);
         GroupTopic groupTopic = groupTopicService.findById(topicId, loginMember);
         if (groupTopic == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1004, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1004, Const.INDEX_ERROR_FTL_PATH);
         }
         if (loginMember.getId().intValue() != groupTopic.getMember().getId().intValue()) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
         }
         List<GroupTopicType> groupTopicTypeList = groupTopicTypeService.list(groupTopic.getGroup().getId());
         model.addAttribute("groupTopicTypeList", groupTopicTypeList);
         model.addAttribute("groupTopic", groupTopic);
         model.addAttribute("loginUser", loginMember);
-        return jeesnsConfig.getFrontTemplate() + "/group/topicEdit";
+        return itRatConfig.getFrontTemplate() + "/group/topicEdit";
     }
 
     @RequestMapping(value = "/topicUpdate", method = RequestMethod.POST)
@@ -355,7 +358,7 @@ public class GroupController extends BaseController {
         Page page = new Page(request);
         Group group = groupService.findById(groupId);
         if (group == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("group", group);
         Member loginMember = MemberUtil.getLoginMember(request);
@@ -386,7 +389,7 @@ public class GroupController extends BaseController {
         }
         model.addAttribute("managerList", managerList);
         model.addAttribute("loginUser", loginMember);
-        return jeesnsConfig.getFrontTemplate() + "/group/auditList";
+        return itRatConfig.getFrontTemplate() + "/group/auditList";
     }
 
 
@@ -404,13 +407,13 @@ public class GroupController extends BaseController {
         Page page = new Page(request);
         Group group = groupService.findById(groupId);
         if (group == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("group", group);
         //获取群组粉丝列表,第一页，20条数据
         ResultModel<GroupFans> resultModel = groupFansService.listByPage(page, groupId);
         model.addAttribute("model", resultModel);
-        return jeesnsConfig.getFrontTemplate() + "/group/fans";
+        return itRatConfig.getFrontTemplate() + "/group/fans";
     }
 
     /**
@@ -470,16 +473,16 @@ public class GroupController extends BaseController {
         Member loginMember = MemberUtil.getLoginMember(request);
         Group group = groupService.findById(groupId);
         if (group == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
         }
         String managerIds = group.getManagers();
         if (("," + managerIds + ",").indexOf("," + loginMember.getId() + ",") == -1) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("group", group);
         List<GroupTopicType> list = groupTopicTypeService.list(groupId);
         model.addAttribute("list", list);
-        return jeesnsConfig.getFrontTemplate() + "/group/topicTypeList";
+        return itRatConfig.getFrontTemplate() + "/group/topicTypeList";
     }
 
     @RequestMapping(value = "/topicTypeAdd/{groupId}", method = RequestMethod.GET)
@@ -488,14 +491,14 @@ public class GroupController extends BaseController {
         Member loginMember = MemberUtil.getLoginMember(request);
         Group group = groupService.findById(groupId);
         if (group == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1002, Const.INDEX_ERROR_FTL_PATH);
         }
         String managerIds = group.getManagers();
         if (("," + managerIds + ",").indexOf("," + loginMember.getId() + ",") == -1) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("group", group);
-        return jeesnsConfig.getFrontTemplate() + "/group/topicTypeAdd";
+        return itRatConfig.getFrontTemplate() + "/group/topicTypeAdd";
     }
 
     @RequestMapping(value = "/topicTypeSave", method = RequestMethod.POST)
@@ -521,15 +524,15 @@ public class GroupController extends BaseController {
         Member loginMember = MemberUtil.getLoginMember(request);
         GroupTopicType groupTopicType = groupTopicTypeService.findById(typeId);
         if (groupTopicType == null) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1013, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1013, Const.INDEX_ERROR_FTL_PATH);
         }
         Group group = groupService.findById(groupTopicType.getGroupId());
         String managerIds = group.getManagers();
         if (("," + managerIds + ",").indexOf("," + loginMember.getId() + ",") == -1) {
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1001, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("groupTopicType", groupTopicType);
-        return jeesnsConfig.getFrontTemplate() + "/group/topicTypeEdit";
+        return itRatConfig.getFrontTemplate() + "/group/topicTypeEdit";
     }
 
     @RequestMapping(value = "/topicTypeUpdate", method = RequestMethod.POST)

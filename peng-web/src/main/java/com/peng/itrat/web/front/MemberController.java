@@ -1,13 +1,13 @@
 package com.peng.itrat.web.front;
 
 import com.peng.itrat.core.invoke.JeesnsInvoke;
+import com.peng.itrat.core.utils.*;
 import com.peng.itrat.utils.MemberUtil;
 import com.peng.itrat.core.exception.ParamException;
 import com.peng.itrat.interceptor.UserLoginInterceptor;
 import com.peng.itrat.core.annotation.Before;
 import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.model.Page;
-import com.peng.itrat.core.utils.*;
 import com.peng.itrat.web.common.BaseController;
 import com.peng.itrat.model.member.Member;
 import com.peng.itrat.service.member.IMemberService;
@@ -40,7 +40,7 @@ public class MemberController extends BaseController {
     @Resource
     private IMessageService messageService;
     @Resource
-    private JeesnsConfig jeesnsConfig;
+    private ItRatConfig itRatConfig;
     private static final String EXT_CARDKEY_SERVICE = "extCardkeyService";
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
@@ -315,11 +315,11 @@ public class MemberController extends BaseController {
     @Before(UserLoginInterceptor.class)
     public String sendMessageBox(@RequestParam(value = "mid") Integer memberId,Model model){
         if(memberId == null){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1000, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1000, Const.INDEX_ERROR_FTL_PATH);
         }
         Member findMember= memberService.findById(memberId);
         if(findMember == null){
-            return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model, -1005, Const.INDEX_ERROR_FTL_PATH);
+            return itRatConfig.getFrontTemplate() + ErrorUtil.error(model, -1005, Const.INDEX_ERROR_FTL_PATH);
         }
         model.addAttribute("member", findMember);
         return MEMBER_FTL_PATH + "sendMessageBox";

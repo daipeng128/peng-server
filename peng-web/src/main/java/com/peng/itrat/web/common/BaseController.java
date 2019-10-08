@@ -3,7 +3,7 @@ package com.peng.itrat.web.common;
 import com.peng.itrat.core.dto.ResultModel;
 import com.peng.itrat.core.exception.JeeException;
 import com.peng.itrat.core.exception.ParamException;
-import com.peng.itrat.core.utils.JeesnsConfig;
+import com.peng.itrat.core.utils.ItRatConfig;
 import com.peng.itrat.model.member.MemberToken;
 import com.peng.itrat.service.member.IMemberTokenService;
 import com.peng.itrat.core.utils.Const;
@@ -32,7 +32,7 @@ public class BaseController {
     @Resource
     protected IMemberTokenService memberTokenService;
     @Resource
-    protected JeesnsConfig jeesnsConfig;
+    protected ItRatConfig itRatConfig;
 
     protected ResultModel<MemberToken> validMemberToken(){
         ResultModel model = new ResultModel(-1,"非法操作");
@@ -141,8 +141,8 @@ public class BaseController {
                 String currUrl = request.getRequestURL().toString();
                 request.setAttribute("msg",msg);
                 String redirectUrl;
-                if (currUrl.indexOf("/" + jeesnsConfig.getManagePath() + "/") > -1){
-                    redirectUrl = request.getContextPath() + "/" + jeesnsConfig.getManagePath() + "/error?msg="+msg;
+                if (currUrl.indexOf("/" + itRatConfig.getManagePath() + "/") > -1){
+                    redirectUrl = request.getContextPath() + "/" + itRatConfig.getManagePath() + "/error?msg="+msg;
                 }else {
                     redirectUrl = request.getContextPath() + "/error?msg="+msg;
                 }

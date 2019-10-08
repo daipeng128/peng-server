@@ -161,7 +161,7 @@
                         </@ads>
                 <div class="panel">
                     <div class="panel-heading">
-                        热门微博
+                        热门圈子
                     </div>
                     <div class="panel-body article-hot-list">
                         <ul>

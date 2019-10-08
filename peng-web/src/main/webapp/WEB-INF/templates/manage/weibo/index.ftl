@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>微博管理 - ${SITE_NAME} - PENG后台管理系统 - Powered By JEESNS</title>
+    <title>圈子管理 - ${SITE_NAME} - PENG后台管理系统 - Powered By JEESNS</title>
     <meta name="keywords" content="${SITE_KEYS}"/>
     <meta name="description" content="${SITE_DESCRIPTION}"/>
     <meta name="author" content="JEESNS"/>
@@ -30,10 +30,10 @@
 <#include "/manage/common/header.ftl"/>
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>微博管理(${model.page.totalCount})</h1>
+            <h1>圈子管理(${model.page.totalCount})</h1>
             <ol class="breadcrumb">
                 <li><a href="${managePath}/index"><i class="fa fa-dashboard"></i> 主页</a></li>
-                <li class="active">微博管理</li>
+                <li class="active">圈子管理</li>
             </ol>
         </section>
         <section class="content">
@@ -81,7 +81,7 @@
                                             <span class="label label-info">详情</span>
                                         </a>
                                         <a class="marg-l-5" target="_jeesnsLink"
-                                           href="javascript:void(0)" data-href="${managePath}/weibo/delete/${weibo.id}" confirm="确定要删除微博吗？" callback="reload">
+                                           href="javascript:void(0)" data-href="${managePath}/weibo/delete/${weibo.id}" confirm="确定要删除圈子吗？" callback="reload">
                                             <span class="label label-danger"><i class="fa fa-trash red"></i></span>
                                         </a>
                                     </td>

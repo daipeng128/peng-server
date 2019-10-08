@@ -71,7 +71,7 @@
             <div class="col-sm-4 col-xs-12">
                 <div class="panel group-topic-list no-border">
                     <div class="panel-heading">
-                        微博
+                        圈子
                     </div>
                     <div class="panel-body article-hot-list">
                         <ul>

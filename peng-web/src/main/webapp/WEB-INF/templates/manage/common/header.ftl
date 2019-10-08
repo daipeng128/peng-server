@@ -100,11 +100,11 @@
             </li>
             <li class="treeview" module="weibo">
                 <a href="#">
-                    <i class="fa fa-weibo"></i> <span>微博管理</span>
+                    <i class="fa fa-weibo"></i> <span>圈子管理</span>
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="${managePath}/weibo/index" module="weibo"><i class="fa fa-circle-o"></i>微博列表</a></li>
+                    <li><a href="${managePath}/weibo/index" module="weibo"><i class="fa fa-circle-o"></i>圈子列表</a></li>
                 </ul>
             </li>
             <li class="treeview" module="picture">
